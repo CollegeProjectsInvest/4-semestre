@@ -1,0 +1,20 @@
+{
+  "name": "api-task",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch src/server.js",
+    "prisma": "./node_modules/.bin/prisma"
+  },
+  "dependencies": {
+    "@fastify/jwt": "^9.0.1",
+    "@prisma/client": "^5.20.0",
+    "bcrypt": "^5.1.1",
+    "fastify": "^5.0.0"
+  },
+  "devDependencies": {
+    "prisma": "^5.20.0"
+  }
+}
