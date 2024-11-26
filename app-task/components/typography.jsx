@@ -11,6 +11,10 @@ const styles = StyleSheet.create({
         color: "#ABABAB",
         fontSize: 16,
     },
+    default2: {
+        color: "#FFFFFF",
+        fontSize: 16
+    },
     title: {
         color: "#FFFFFF",
         fontSize: 24,
@@ -32,5 +36,5 @@ const styles = StyleSheet.create({
         color: "red",
         fontSize: 16,
         textAlign: "center"
-    }
+    },
 });

@@ -1,5 +1,6 @@
 import Fastify from "fastify";
 import jwt from "@fastify/jwt";
+import cors from '@fastify/cors';
 
 import { UserRegisterController } from "./controllers/user-register-controller.js";
 import { UserLoginController } from "./controllers/user-login-controller.js";
@@ -15,6 +16,7 @@ const fastify = Fastify({ logger: true });
 fastify.register(jwt, {
     secret: process.env.SECRET_JWT,
 });
+fastify.register(cors)
 
 // Rotas
 

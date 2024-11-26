@@ -2,7 +2,8 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { router } from "expo-router";
 import { createContext, useEffect, useState } from "react";
 
-const TOKEN_KEY = "@app-task:token";
+import { API_URL } from "../libs/api";
+import { TOKEN_KEY } from "../libs/async-storage";
 
 export const AuthContext = createContext({});
 
@@ -21,7 +22,7 @@ export function AuthContextProvider({ children }) {
         try {
             setLoading(true);
 
-            const response = await fetch("http://localhost:8080/api/user/register", {
+            const response = await fetch(API_URL + "/user/register", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -41,6 +42,7 @@ export function AuthContextProvider({ children }) {
 
             router.replace("/");
         } catch (error) {
+            console.error(error);
             setError(error.message);
         } finally {
             setLoading(false);
@@ -51,7 +53,7 @@ export function AuthContextProvider({ children }) {
         try {
             setLoading(true);
 
-            const response = await fetch("http://localhost:8080/api/user/login", {
+            const response = await fetch(API_URL + "/user/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

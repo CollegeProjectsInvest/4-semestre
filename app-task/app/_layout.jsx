@@ -3,13 +3,16 @@ import { StatusBar } from "expo-status-bar";
 import { SafeAreaView, StyleSheet } from "react-native";
 
 import { AuthContextProvider } from "../contexts/auth-context";
+import { TasksContextProvider } from "../contexts/tasks-context";
 
 export default function AppLayout() {
     return (
         <SafeAreaView style={styles.container}>
             <StatusBar style="light" />
             <AuthContextProvider>
-                <Slot />
+                <TasksContextProvider>
+                    <Slot />
+                </TasksContextProvider>
             </AuthContextProvider>
         </SafeAreaView>
     );
